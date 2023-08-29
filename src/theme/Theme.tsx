@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 const options: ThemeOptions = {
   palette: {
     primary: {
-      light: "#757ce8",
+      light: "#414141",
       main: "#3f50b5",
       dark: "#002884",
       contrastText: "#fff",
