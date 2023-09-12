@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  ButtonGroup,
   Card,
   CardActions,
   CardContent,
@@ -25,78 +26,26 @@ export const plans: {
     hrefViewMore: "#",
     hrefSelectPlan: "/comprar/0",
   },
-  {
-    title: "Business",
-    description:
-      "Comienza a vender al instante con los elementos esenciales del eCommerce.",
-    price: 5990,
-    hrefViewMore: "#",
-    hrefSelectPlan: "/comprar/1",
-  },
-  {
-    title: "Advanced Store",
-    description:
-      "Haz crecer tu negocio con potentes herramientas de marketing.",
-    price: 8990,
-    hrefViewMore: "#",
-    hrefSelectPlan: "/comprar/2",
-  },
 ];
 
 const PlansSection = () => {
   return (
-    <Stack spacing={2}>
-      <Typography textAlign={"center"} variant="h4" className="title">
-        Elije el plan que mejor te convenga
-      </Typography>
-      <Box>
-        <Grid container spacing={4}>
-          {plans.map((item, index) => (
-            <Grid item key={index} xs={12} md={4}>
-              <Card
-                sx={{
-                  minHeight: "345px",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                  p: 2,
-                }}
-                elevation={4}
-              >
-                <CardHeader title={item.title} subheader={item.description} />
-                <Box>
-                  <CardContent>
-                    <Typography variant="caption">Desde</Typography>
-                    <Typography variant="h4" className="title">
-                      {`AR$ ${item.price
-                        .toString()
-                        .replace(/\B(?=(\d{3})+(?!\d))/g, ".")},00`}
-                    </Typography>
-                    <Typography variant="caption">/mes</Typography>
-                  </CardContent>
-                  <CardActions></CardActions>
-                  <Stack direction={"row"} spacing={2}>
-                    <Button
-                      variant="contained"
-                      className="button contained"
-                      href={item.hrefSelectPlan}
-                    >
-                      Seleccionar
-                    </Button>
-                    <Button
-                      variant="text"
-                      className="button button-text"
-                      href={item.hrefViewMore}
-                    >
-                      Ver más
-                    </Button>
-                  </Stack>
-                </Box>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
+    <Stack
+      direction="row"
+      justifyContent="center"
+      alignItems="flex-start"
+      spacing={2}
+    >
+      <ButtonGroup
+        disableElevation
+        variant="contained"
+        aria-label="outlined primary button group"
+      >
+        <Grid container spacing={0}></Grid>
+        <Button>stock</Button>
+        <Button>sin stock</Button>
+      </ButtonGroup>
+      <Box></Box>
     </Stack>
   );
 };
